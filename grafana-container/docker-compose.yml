@@ -1,0 +1,16 @@
+version: '3'
+services:
+  grafana:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./custom.ini:/etc/grafana/grafana.ini
+      - ./influx-datasource.yml:/etc/grafana/provisioning/datasources/influx-datasource.yml
+      - ./defDashboard.json:/etc/grafana/provisioning/dashboards/defDashboard.json
+      - ./dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+    environment:
+    # HERE PASTE IFLUXDB ALL ACCESS API TOKEN
+      - INFLUX_TOKEN=

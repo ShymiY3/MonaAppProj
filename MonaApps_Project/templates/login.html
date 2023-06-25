@@ -1,0 +1,61 @@
+<!-- /*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to the monitoring web-app</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      {% load django_bootstrap5 %}
+      {% if messages %}
+      <div class="alert alert-danger">
+        <ul>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="form-box">
+        <form class="form" method="post" action="/">
+          {% csrf_token %}
+          <div class="headline">
+            <h1>Welcome</h1>
+          </div>
+          <div class="signin" id="login">
+            <div class="form-group">{{ form.username }}</div>
+            <div class="input-box">
+              {{ form.password }}
+            </div>
+            <div class="forget-password">
+              <div class="check-box">
+                <label>{{ form.remember_me }}Remember me</label>
+              </div>
+              <a href="reset_password/" id="forgot">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">LOGIN</button>
+            <div class="account-exist">
+              Create a new account?
+              <a href="registration" id="signup">Sign up</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+  </body>
+</html>

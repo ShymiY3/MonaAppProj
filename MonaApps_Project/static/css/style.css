@@ -1,0 +1,286 @@
+/* === Google Font ===*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Variables Define ===*/
+:root{
+    --primary-color:#1900ff;
+    --white-color:#fff;
+    --black-color:#000000; 
+    --royal-red:#c81818;
+}
+
+
+/* === Body CSS ===*/
+body{  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* === Main Content CSS ===*/
+.background{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-image: url('../images/background.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    min-height: 100vh;
+    z-index: -1;
+}
+.wrapper{
+    padding:50px 25px 0;
+    max-width:880px;
+    width:100%;
+    margin:auto;
+    position: relative;
+    z-index: 1;
+}
+.wrapper::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+/*.wrapper .form-box {
+    position: relative;
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border-radius: 10px;
+  }
+  
+  @media (orientation: landscape) {
+    .wrapper .form-box {
+      width: 80vw;
+      height: 80vh; /* make it square 
+    }
+  }
+  
+  @media (orientation: portrait) {
+    .wrapper .form-box {
+      width: 60vw;
+      height: 90vh; /* make it rectangular 
+    }
+  }
+  */
+/* base styles for the form */
+.wrapper .form-box {
+    position: relative;
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border-radius: 10px;
+  }
+  
+  @media only screen and (orientation: portrait) {
+    .wrapper .form-box {
+      height: 80vh;
+      width: 80vw; /* adjust as needed */
+    }
+  }
+  
+  @media only screen and (orientation: landscape) {
+    .wrapper .form-box {
+      height: 100%; /* adjust as needed */
+      width: 100%;
+    }
+  }
+.wrapper .headline{
+    text-align: center;
+    padding-bottom:48px;
+}
+.wrapper .headline h1{
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52px;
+}
+.wrapper .form{
+    max-width:350px;
+    width:100%;
+    margin:auto;
+}
+.wrapper .form-group{
+    margin-bottom: 15px;
+
+}
+.wrapper .form-group input{
+    display:block;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    padding:11px 15px;
+    height:48px;
+    border-radius: 5px;
+    color:var(--black-color);
+    border:1px solid #e4e8ee;
+    box-shadow: none;
+    width:100%;
+}
+.wrapper .input-box{
+    background: #fff;
+    width: 100%;
+    line-height: 24px;
+    max-width: 500px;
+    height:48px;
+    border-radius: 5px;
+    padding: 11px 15px;
+    border:1px solid #e4e8ee;
+    outline: 1px;
+    margin: 15px auto;
+    align-items: center;
+    display: flex;
+}
+.wrapper .input-box input{
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    color:#000000;
+}
+.wrapper .input-box img{
+    width: 24px;
+    cursor: pointer;
+}
+.wrapper .form-group input::placeholder{
+    color:var(--black-color);
+    font-weight: 400;
+    font-size: 14px;
+}
+.wrapper .input-box input::placeholder{
+    color:var(--black-color);
+    font-weight: 400;
+    font-size: 14px;
+}
+.wrapper .btn{
+    width:100%;
+    margin:15px 0 30px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    padding:12px 29px;
+    height:48px;
+    text-transform: uppercase;
+    color:var(--white-color);
+    background-color: var(--royal-red);
+    border:none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+}
+.wrapper .btn:focus{
+    outline:none;
+}
+.wrapper .account-exist{
+    color:var(--white-color);
+    border-top:1px solid var(--white-color);
+    padding-top:20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.wrapper .account-exist a{
+    color:var(--primary-color);
+}
+.wrapper .forget-password{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 0;
+}
+.wrapper .forget-password a{
+    color:var(--primary-color);
+}
+.wrapper .forget-password .check-box{
+    font-size: 15px;
+    color:var(--white-color);
+} 
+.forget {
+  display: none;
+}
+
+.signin {
+  display: block;
+}
+
+.password-strength {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.password-strength::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.25rem;
+  border-radius: 50%;
+}
+
+.password-strength.weak::before {
+  background-color: #dc3545;
+}
+
+.password-strength.medium::before {
+  background-color: #ffc107;
+}
+
+.password-strength.strong::before {
+  background-color: #28a745;
+}
+
+input[type="password"] {
+  border: 2px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+@media (max-width:1030px){
+    .wrapper::before{
+        left:-25%;
+        min-height: 60vh;
+        height:500px;
+    }
+}
+@media (max-width:767px){
+    .wrapper{
+        max-width: 550px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: repeat-y;
+        min-height: 100vh;
+
+    }
+    .wrapper .headline h1{
+        font-size: 22px;
+        line-height:25px;
+    }
+}
+        
